@@ -1,0 +1,11 @@
+public ActionResult Landing()
+        {
+            List<Campaign> campaigns = db.Campaigns.ToList();
+            return View(campaigns);
+            var datePlusSeven = DateTime.Today.AddDays(7);
+            var expiringCampaigns = from c in db.Campaigns.Include(c => c.ApplicationUser)
+                                    select c;
+            expiringCampaigns = expiringCampaigns.Where(c => DateTime.Today < c.ExpireDate && datePlusSeven > c.ExpireDate && c.ExpireDate != null);
+            return View(expiringCampaigns.ToList());
+        }
+        
