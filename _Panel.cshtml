@@ -1,0 +1,13 @@
+<div class="hover-expiration campaign-panel-@Model.CampaignID col-lg-2 col-md-3 col-sm-4 col-xs-6" id="bootstrap-override">
+    <div class="hover-expiration-content">
+        @{ 
+            DateTime currentTime = DateTime.Now;
+            DateTime expireTime = Model.ExpireDate == null ? currentTime : Model.ExpireDate.Value.Date;
+            TimeSpan remainingHours = expireTime - currentTime;
+            double totalDays = remainingHours.TotalDays;
+            int intTotalDays = Convert.ToInt32(totalDays);
+            string totalString = intTotalDays.ToString();
+        }
+        @(totalDays == 0 ? "No expiration" : "Expires in " + totalString + " days")
+        
+    </div>
