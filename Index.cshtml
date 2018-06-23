@@ -1,0 +1,23 @@
+ </button>
+                <ul class="dropdown-menu btn btn-default" aria-labelledby="sortBy" id="CategoryBtn">
+                    @{
+                    <li>@Html.ActionLink("Clothing", "Index", new { sortOrder = ViewBag.ClothingCatParm})</li>
+                    <li>@Html.ActionLink("Food & Drink", "Index", new { sortOrder = ViewBag.FoodDrinkCatParm })</li>
+                    <li>@Html.ActionLink("Health & Beauty", "Index", new { sortOrder = ViewBag.HealthBeautyCatParm })</li>
+                    <li>@Html.ActionLink("Home Products", "Index", new { sortOrder = ViewBag.HomeProductCatParm })</li>
+                    <li>@Html.ActionLink("Children", "Index", new { sortOrder = ViewBag.ChildrenCatParm })</li>
+                    <li>@Html.ActionLink("Technology", "Index", new { sortOrder = ViewBag.TechnologyCatParm })</li>
+                    <li>@Html.ActionLink("Miscellaneous", "Index", new { sortOrder = ViewBag.MiscCatParm })</li>
+                    
+                    @*@{
+                    var i = 0;
+                    foreach (var item in Enum.GetValues(typeof(BlueRibbonsReview.Models.Categories)))
+                    {
+                        <li>@category.GetDisplayName()</li>
+                            i++;
+                        }
+                    }
+                    }*@
+                </ul>
+            </div>
+        </div>
