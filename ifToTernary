@@ -1,0 +1,16 @@
+@{int slideNum = 1; }
+            @foreach (var Product in Model)
+                    {
+                string classy = "";
+                        var classy = Model.First() == Product ? "item active" : "item";
+                if (Model.First() == Product)
+                {
+                    classy = "item active";
+                }
+                else
+                {
+                    classy = "item";
+                }
+                        <div class="@classy">
+                            <img class="d-block w-100" src="@Product.ImageUrL"  alt="@slideNum slide">
+                        </div>
